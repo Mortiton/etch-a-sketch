@@ -17,6 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    gap: 10px;
 }
 
 #inner-container {
@@ -25,23 +26,22 @@ body {
     width: 70vw;
     flex: 1;
     flex-direction: column;
-    gap: 24px;
+    gap:10px;
 }
-h1 {
-    margin-bottom: 100px;
-}
+
 #game-container {
     display: flex;
     flex-wrap: wrap;
-    height: 600px;
-    width: 600px;
+    height: 700px;
+    width: 700px;
     background-color: white;
 }
-.bottom-ui {
-
-    justify-content: center;
-    flex-basis: 10vh;
-    border: 5px solid black;
+#bottom-ui {
+    padding: 40px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #580863;
+    border: 5px solid #580863;
 }
 
 #buttonGroup {
