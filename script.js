@@ -6,10 +6,11 @@ let sides = 0.0;
 function createDiv(numberOfGrids){
     gameContainer.innerHTML='';
     let grids = numberOfGrids * numberOfGrids;
+    sides = calcMeasurements(numberOfGrids);
 
     for(i=0; i<grids; i++){
         let grid= document.createElement("div");
-        sides = calcMeasurements(numberOfGrids);
+
 
         grid.setAttribute("class", "grid");
         grid.style.flexBasis=sides;
