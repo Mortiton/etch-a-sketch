@@ -1,14 +1,59 @@
-const GRID_NUM = 16; // number of div containers needed for the grid
-const container = document.querySelector(".container")
+const gridNumber = 16; // number of div containers grids by default
+const gameContainer = document.querySelector("#game-container");
+let sides = 0.0;
 
-function createDiv(){
-    for(i=0; i<GRID_NUM; i++){
+
+function createDiv(numberOfGrids){
+    gameContainer.innerHTML='';
+    let grids = numberOfGrids * numberOfGrids;
+
+    for(i=0; i<grids; i++){
         let grid= document.createElement("div");
+        sides = calcMeasurements(numberOfGrids);
+
         grid.setAttribute("class", "grid");
-        container.appendChild(grid);
+        grid.style.flexBasis=sides;
+        gameContainer.appendChild(grid);
+
+        setGridSize(grid, sides)
+        //Store grid elements in an array
+        // grids.push(grid);
     }
 }
 
-createDiv();
+
+//Calculate grid width and height
+function calcMeasurements(numberOfGrids){
+        // Convert border size to percentage, 2 is the number of pixels to take into account for the border
+        let borderSizeInPercentage = (2 * numberOfGrids / gameContainer.offsetWidth) * 100;
+
+        // Subtract border size from total size and divide by number of grids
+        let sides = (100 - borderSizeInPercentage) / numberOfGrids + "%";
+    
+        return sides;
+}
 
 
+//set height and width attributes of the grids created in the createDiv function
+function setGridSize (grid, sides){
+    grid.style.height=sides;
+    grid.style.width=sides
+}
+
+function gridSelectClickEvent(){
+    let gridNumber= prompt("How many grids do you want?");
+    createDiv(gridNumber);
+}
+
+//grid buttons
+let gridSelectBtn = document.querySelector("#grid-select")
+
+gridSelectBtn.addEventListener("click", gridSelectClickEvent)
+
+
+
+
+//Page start
+window.onload = () => {
+    createDiv(16);
+}
