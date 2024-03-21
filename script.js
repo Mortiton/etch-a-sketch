@@ -43,7 +43,13 @@ function setGridSize (grid, sides){
 
 function gridSelectClickEvent(){
     let gridNumber= prompt("How many grids do you want?");
+    if (gridNumber > 100){
+        alert("Cannot set grids above 100!");
+        gridNumber=0;
+    }
+    else {
     createDiv(gridNumber);
+    }
 }
 
 //grid buttons

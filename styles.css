@@ -1,12 +1,14 @@
 body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #580863;
+    color: white;
     height: 100vh;
     margin: 0;
     overflow: hidden;
     display: flex;
     justify-content: center;    
     align-content: center;
-    background-color: #580863;
-    color: white;
+
 }
 
 #container {
@@ -36,6 +38,16 @@ body {
     width: 700px;
     background-color: white;
 }
+
+.grid {
+    flex: 0 0 auto;
+    border: 1px solid black;
+}
+
+.grid:hover {
+    background-color: #da90e4;
+}
+
 #bottom-ui {
     padding: 40px;
     width: 400px;
@@ -54,9 +66,4 @@ body {
     font-size: 16px;
     font-weight: bold;
     padding: 16px;
-}
-
-.grid {
-    flex: 0 0 auto;
-    border: 1px solid black;
 }
