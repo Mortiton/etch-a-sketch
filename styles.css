@@ -59,11 +59,10 @@ body {
 #buttonGroup {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
 }
 
-.grid-button {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 16px;
+#grid-select,
+#clear {
+    width: 100px;
 }
